@@ -1,0 +1,198 @@
+.LandingPageContainer{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    padding: 0 0 0 0;
+}
+
+.LandingPageContainerLeft{
+
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 60%;
+   background-color: #f7ede2;
+   align-items: center;
+   justify-content: center;
+   padding: 5%, 5%, 5%, 5% ;
+
+
+
+}
+
+
+.LandingPageContainerRight{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 40%;
+    background-color: black;
+}
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+header {
+  display: flex;
+  position: relative;
+}
+header h1 {
+ 
+  font-weight: lighter;
+  font-size: 3.5rem ;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #000000;
+  
+  font-family: 'Silkscreen', cursive;
+}
+
+.flipClock {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+}
+
+.flipUnitContainer {
+  display: block;
+  position: relative;
+  width: 140px;
+  height: 120px;
+  perspective-origin: 50% 50%;
+  perspective: 300px;
+  background-color: #FFA970;
+  border-radius: 3px;
+  box-shadow: 0px 10px 10px -10px grey;
+}
+
+.upperCard, .lowerCard {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  border: 1px solid #ffeedd;
+}
+.upperCard span, .lowerCard span {
+  font-size: 5em;
+  font-family: 'Silkscreen', cursive;
+  font-weight: lighter;
+  color: #333333;
+}
+
+.upperCard {
+  align-items: flex-end;
+  border-bottom: 0.5px solid #ffeedd;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.upperCard span {
+  transform: translateY(50%);
+}
+
+.lowerCard {
+  align-items: flex-start;
+  border-top: 0.5px solid #ffeedd;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.lowerCard span {
+  transform: translateY(-50%);
+}
+
+.flipCard {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.flipCard span {
+    font-family: 'Silkscreen', cursive;
+  font-size: 5em;
+  font-weight: lighter;
+  color: #333333;
+}
+.flipCard.unfold {
+  top: 50%;
+  align-items: flex-start;
+  transform-origin: 50% 0%;
+  transform: rotateX(180deg);
+  background-color: #FFA970;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border: 0.5px solid #ffeedd;
+  border-top: 0.5px solid #ffeedd;
+}
+.flipCard.unfold span {
+  transform: translateY(-50%);
+}
+.flipCard.fold {
+  top: 0%;
+  align-items: flex-end;
+  transform-origin: 50% 100%;
+  transform: rotateX(0deg);
+  background-color: #FFA970;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border: 0.5px solid #ffeedd;
+  border-bottom: 0.5px solid #ffeedd;
+}
+.flipCard.fold span {
+  transform: translateY(50%);
+}
+
+.fold {
+  -webkit-animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+          animation: fold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+  transform-style: preserve-3d;
+}
+
+.unfold {
+  -webkit-animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+          animation: unfold 0.6s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 normal forwards;
+  transform-style: preserve-3d;
+}
+
+@-webkit-keyframes fold {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+
+@keyframes fold {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-180deg);
+  }
+}
+@-webkit-keyframes unfold {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes unfold {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
